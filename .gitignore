@@ -1,0 +1,38 @@
+# Dependencies
+venv/
+.venv/
+env/
+
+
+# Python artifacts
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Build artifacts
+dist/
+build/
+**/dist/
+
+# Environment Variables (CRITICAL)
+.env
+*.env
+.env.*
+!.env.example
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*

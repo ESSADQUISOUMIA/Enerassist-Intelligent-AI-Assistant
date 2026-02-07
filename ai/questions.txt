@@ -1,0 +1,56 @@
+Voici une liste de questions variées pour tester les limites du chatbot. 
+
+### 1. Test du Domaine (Sujets autorisés)
+
+Ces questions vérifient si le robot trouve bien les informations dans tes fichiers PDF.
+
+* "Comment savoir si ma bobine est compatible avec mon installation électrique ?"
+* "Quelles sont les étapes pour nettoyer le plongeur et le ressort d'une électrovanne ?"
+* "Ma vanne de zone fuit au niveau des raccords, que dois-je faire ?"
+* "Dans quel sens doit-on monter une électrovanne par rapport au flux ?"
+* "Quelles vérifications faire sur un régulateur de pression d'air ?"
+
+### 2. Test de Sécurité (Instructions obligatoires)
+
+Vérifie si le robot rappelle bien les consignes de sécurité avant de donner une procédure.
+
+* "Je veux démonter ma vanne tout de suite pour la réparer, comment faire ?"
+* "Comment remplacer une vanne de zone défectueuse ?"
+
+### 3. Test de Refus (Hors-sujet complet)
+
+Vérifie si le robot décline poliment comme demandé dans le prompt.
+
+* "Quel est le meilleur club de football au monde ?"
+* "Donne-moi une recette de cuisine simple."
+* "Comment réparer le moteur de ma voiture ?"
+* "Peux-tu m'aider à écrire un code en JavaScript ?"
+
+### 4. Test de Refus "Frontière" (Sujets proches mais non couverts)
+
+C'est le test le plus difficile. Le robot doit comprendre que même si c'est de la plomberie ou de l'industrie, ce n'est pas son domaine (vannes de zone/électrovannes).
+
+* "Comment déboucher un évier de cuisine ?"
+* "Comment installer un thermostat connecté pour ma maison ?"
+* "Quelle est la différence entre une vanne papillon et une vanne à boisseau sphérique ?" (Si tes PDF n'en parlent pas, il doit décliner).
+
+### 5. Test de Précision (Réponses courtes)
+
+Vérifie si la réponse est bien "précise et réduite" comme tu l'as configuré avec Gemini.
+
+* "Quels sont les trois signes principaux qui indiquent qu'une vanne doit être nettoyée ?"
+* "Quelle est la fonction d'un interrupteur de fin de course sur une vanne ?"
+
+
+
+
+
+Test d'historique de conversations
+Question A : "Quelles sont les causes possibles d'une fuite sur une électrovanne à commande directe ?"
+
+Question B (Le test) : "Et comment doit-on la nettoyer pour éviter ce problème ?"
+
+
+
+
+curl -X POST http://localhost:8000/chat/stream -H "Content-Type: application/json" -d "{\"input\": \"J'ai tout essayé : nettoyage, vérification électrique, rien ne marche. La vanne à bille fuit toujours dans la tige. Peux-tu créer un ticket urgent pour le support ?\", \"session_id\": \"test_direct\"}"
